@@ -33,16 +33,12 @@ public class Alumno {
         return asignado;
     }
 
-    public ArrayList<String> getCualidades() {
-        return cualidadesAlumno;
-    }
-
-    public ArrayList<String> getFamiliar() {
-        return familiar;
-    }
     //Agregar cualidad
     public void addCualidadAlumno(String cualidad){
         cualidadesAlumno.add(cualidad);
+    }
+    public boolean tieneCualidad(String cualidad){
+        return cualidadesAlumno.contains(cualidad);
     }
 
 }

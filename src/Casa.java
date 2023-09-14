@@ -33,13 +33,6 @@ public class Casa {
         this.tamanioMax = tamanioMax;
     }
 
-    public ArrayList<String> getCualidadesCasa() {
-        return cualidadesCasa;
-    }
-
-    public ArrayList<Alumno> getAlumnos() {
-        return alumnos;
-    }
 
     //Agregar cualidad
     public void addCualidadCasa(String cualidad) {
@@ -48,16 +41,24 @@ public class Casa {
 
     //Se puede agregar al alumno?
     public void addAlumno(Alumno alumno) {
-        if (existeCapacidad()==true &&cumpleCualidadesCasa(alumno)==true && alumno.isAsignado()==false) { //Si hay lugar y cumple cualidades
-                alumnos.add(alumno); //entonces lo agrego
-                //Cambio asignado a true
-                alumno.setAsignado(true);
+        if (existeCapacidad() == true && cumpleCualidadesCasa(alumno) == true && alumno.isAsignado() == false) { //Si hay lugar y cumple cualidades
+            alumnos.add(alumno); //entonces lo agrego
+            //Cambio asignado a true
+            alumno.setAsignado(true);
         }
     }
-    public boolean existeCapacidad(){
-       return tamanioMax>alumnos.size();
+
+    public boolean existeCapacidad() {
+        return tamanioMax > alumnos.size();
     }
+
     public boolean cumpleCualidadesCasa(Alumno alumno) {
-        return (alumno.getCualidades().containsAll(this.cualidadesCasa));
+        for (String c : cualidadesCasa) {  //No debo acceder directamente a los datos de otra clase (me lo corrijio el profe)
+            if (!alumno.tieneCualidad(c)) {
+                return false;
+
+            }
+        }
+        return true;
     }
 }
