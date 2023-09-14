@@ -43,11 +43,6 @@ public class Main {
         casa1.addAlumno(alumno3);
         casa1.addAlumno(alumno4);
 
-        //Recorro la casa para ver
-        System.out.println("La casa 1 está compuesta por: ");
-        for(Alumno alumnos : casa1.getAlumnos()){
-            System.out.println(alumnos.getNombre());
-        }
 
     }
 }

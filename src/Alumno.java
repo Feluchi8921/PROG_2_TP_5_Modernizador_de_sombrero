@@ -32,6 +32,9 @@ public class Alumno {
     public boolean isAsignado() {
         return asignado;
     }
+    public void addFamiliar(String nombreFamiliar){
+        familiar.add(nombreFamiliar);
+    }
 
     //Agregar cualidad
     public void addCualidadAlumno(String cualidad){
@@ -40,5 +43,6 @@ public class Alumno {
     public boolean tieneCualidad(String cualidad){
         return cualidadesAlumno.contains(cualidad);
     }
+
 
 }

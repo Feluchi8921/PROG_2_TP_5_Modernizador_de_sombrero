@@ -4,13 +4,15 @@ public class Casa {
     //Atributos
     private String nombreCasa;
     private int tamanioMax;
+    private boolean enemistad;
     private ArrayList<String> cualidadesCasa = new ArrayList<>();
-    private ArrayList<Alumno> alumnos = new ArrayList<>();
+    protected ArrayList<Alumno> alumnos = new ArrayList<>();
 
     //Constructor
-    public Casa(String nombreCasa, int tamanioMax) {
+    public Casa(String nombreCasa, int tamanioMax, boolean enemistad) {
         this.nombreCasa = nombreCasa;
         this.tamanioMax = tamanioMax;
+        this.enemistad=enemistad;
         this.alumnos = new ArrayList<>();
         this.cualidadesCasa = new ArrayList<>();
     }
@@ -33,6 +35,13 @@ public class Casa {
         this.tamanioMax = tamanioMax;
     }
 
+    public boolean isEnemistad() {
+        return enemistad;
+    }
+
+    public void setEnemistad(boolean enemistad) {
+        this.enemistad = enemistad;
+    }
 
     //Agregar cualidad
     public void addCualidadCasa(String cualidad) {
@@ -61,4 +70,5 @@ public class Casa {
         }
         return true;
     }
+
 }
